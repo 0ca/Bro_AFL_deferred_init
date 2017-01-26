@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/default/bro2/bro/aux/bro-aux/bro-cut/bro-cut.c
+string.h
+-
+limits.h
+-
+getopt.h
+-
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+time.h
+-
+

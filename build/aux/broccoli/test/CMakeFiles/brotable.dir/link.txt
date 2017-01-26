@@ -1,0 +1,1 @@
+/usr/local/bin/afl-clang-fast  -lpthread  -Wall -Wno-unused -O2 -g -DNDEBUG   -lpthread CMakeFiles/brotable.dir/brotable.c.o  -o brotable -rdynamic ../src/libbroccoli.so.5.1.0 -lssl -lcrypto -Wl,-Bstatic -lresolv -Wl,-Bdynamic -Wl,-rpath,/home/default/bro2/bro/build/aux/broccoli/src 

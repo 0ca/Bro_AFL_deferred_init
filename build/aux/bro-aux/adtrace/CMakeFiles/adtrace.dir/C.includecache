@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/default/bro2/bro/aux/bro-aux/adtrace/adtrace.c
+stdio.h
+-
+unistd.h
+-
+stdlib.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+pcap.h
+-
+ip.h
+/home/default/bro2/bro/aux/bro-aux/adtrace/ip.h
+ether.h
+/home/default/bro2/bro/aux/bro-aux/adtrace/ether.h
+ethertype.h
+/home/default/bro2/bro/aux/bro-aux/adtrace/ethertype.h
+
+/home/default/bro2/bro/aux/bro-aux/adtrace/ether.h
+
+/home/default/bro2/bro/aux/bro-aux/adtrace/ethertype.h
+
+/home/default/bro2/bro/aux/bro-aux/adtrace/ip.h
+

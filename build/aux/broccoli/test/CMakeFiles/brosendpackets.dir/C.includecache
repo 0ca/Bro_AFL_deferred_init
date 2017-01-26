@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/default/bro2/bro/aux/broccoli/test/brosendpackets.c
+string.h
+-
+broccoli.h
+-
+pcap.h
+-
+
+aux/broccoli/test/../src/broccoli.h
+inttypes.h
+-
+unistd.h
+-
+sys/types.h
+-
+stdlib.h
+-
+winsock.h
+-
+netinet/in.h
+-
+openssl/crypto.h
+-
+pcap.h
+-
+
