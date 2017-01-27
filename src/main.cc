@@ -295,7 +295,7 @@ void done_with_network()
 		}
 
 	// Save state before expiring the remaining events/timers.
-	persistence_serializer->WriteState(false);
+	//persistence_serializer->WriteState(false);
 
 	if ( profiling_logger )
 		profiling_logger->Log();
@@ -954,9 +954,6 @@ int main(int argc, char** argv)
 			}
 		}
 
-	if ( dns_type != DNS_PRIME )
-		net_init(interfaces, read_files, writefile, do_watchdog);
-
 	BroFile::SetDefaultRotation(log_rotate_interval, log_max_size);
 
 	net_done = internal_handler("net_done");
@@ -1039,6 +1036,10 @@ int main(int argc, char** argv)
 		// Set up network_time to track real-time, since
 		// we don't have any other source for it.
 		net_update_time(current_time());
+
+	#ifdef __AFL_HAVE_MANUAL_CONTROL
+	  __AFL_INIT();
+	#endif
 
 	EventHandlerPtr bro_init = internal_handler("bro_init");
 	if ( bro_init )	//### this should be a function
@@ -1136,6 +1137,8 @@ int main(int argc, char** argv)
 				mem_net_start_total / 1024 / 1024,
 				mem_net_start_malloced / 1024 / 1024);
 			}
+		if ( dns_type != DNS_PRIME )
+			net_init(interfaces, read_files, writefile, do_watchdog);
 
 		net_run();
 
